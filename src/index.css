@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body, html {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
