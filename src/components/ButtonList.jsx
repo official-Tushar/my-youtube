@@ -7,7 +7,7 @@ const ButtonList = () => {
   ];
 
   return (
-    <div className="flex w-full overflow-x-scroll no-scrollbar whitespace-nowrap p-2">
+    <div className="fixed mt-15 z-1 flex w-[1150px] overflow-x-scroll no-scrollbar whitespace-nowrap p-2 bg-white">
       {buttonNames.map((name, index) => (
         <Button key={index} name={name} />
       ))}

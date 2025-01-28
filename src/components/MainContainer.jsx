@@ -3,9 +3,11 @@ import VideoContainer from "./VideoContainer";
 
 const MainContainer = () => {
   return (
-    <div className="w-290 m-2">
-      <ButtonList/>
-      <div className="overflow-y-scroll h-105">
+    <div className="relative grid grid-flow-row">
+      <div className="row-span-2">
+        <ButtonList/>
+      </div>
+      <div className=" relative mt-30">
         <VideoContainer/>
       </div>
     </div>

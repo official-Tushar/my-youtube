@@ -3,9 +3,9 @@ import Body from "./components/Body";
 import { Provider } from "react-redux";
 import store from "./utils/store";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import { element } from "prop-types";
 import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
+import Sidebar from "./components/Sidebar";
 
 const appRouter = createBrowserRouter([{
   path: "/",
@@ -13,11 +13,25 @@ const appRouter = createBrowserRouter([{
   children: [
     {
     path: "/",
-    element: <MainContainer/> 
+    element: (
+      <div className="grid grid-cols-12 h-screen">
+        <div className="col-span-1"><Sidebar /></div>
+        <div className="col-span-11">
+          <div className="grid-cols-3">
+            <MainContainer />
+          </div>
+        </div>
+      </div>
+      )
     },
     {
       path: "watch",
-      element: <WatchPage/>
+      element: (
+      <div>
+        <Sidebar/>
+        <WatchPage/>
+      </div>
+        )
       }
   ]
 }])
@@ -25,8 +39,8 @@ const appRouter = createBrowserRouter([{
 function App() {
   return (
     <Provider store={store}>
-      <div>
-        <Head/>
+      <div className="grid grid-flow-row h-screen overflow-y-scroll overflow-x-hidden">
+        <div><Head/></div>
         <RouterProvider router={appRouter}/>
       </div>
     </Provider>
