@@ -17,6 +17,7 @@ const VideoContainer = () => {
     setVideos(json.items);
   }
 
+  if (!videos) return;
   return (
     <div className='flex justify-evenly flex-wrap'>
       {videos.length > 0 ? (
